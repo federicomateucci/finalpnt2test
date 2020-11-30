@@ -9,7 +9,7 @@
 
 
   </div>
-  <p>{{$store.state.input}}</p>
+  <p>{{getInputFromStore()}}</p>
 </template>
 
 <script>
@@ -24,16 +24,17 @@ export default {
     addToStore(){
       this.$store.dispatch('chargeVarAction',this.inputfromStore)
       this.inputfromStore='';
+    },
+      getInputFromStore(){
+      return this.$store.state.input
+
+      
     }
     
   
   },
   computed:{
-    getInputFromStore(){
-      return this.$store.state.input
-
-      
-    }
+  
   }
 
  
